@@ -86,9 +86,14 @@ body{
     width: stretch;
     cursor: pointer;
     border: none;
+    transition: .3s ease all;
     border-radius: 20px;
     font-size: 18px;
     padding: 5px 15px 5px 15px;
     background-color: #261412;
-    color: white;
+    color: #cbcbcb;
+}
+
+.details .btn:hover {
+    transform: scale(1.02);
 }
