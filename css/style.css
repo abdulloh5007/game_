@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000;
+    height: 100vh;
+}
+
+.container{
+    max-width: 768px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: stretch;
+    cursor: pointer;
+    transition: .3s ease all;
+    background-color: #261412;
+    color: #cbcbcb;
+    padding: 5px 15px 5px 15px;
+    margin: 0 10px 0 10px;
+    border-radius: 30px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.card b {
+    font-size: 18px;
+    font-weight: 400;
+    cursor: auto;
+}
+
+.card p {
+    font-size: 16px;
+    font-weight: 400;
+    cursor: auto;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    width: stretch;
+    padding: 5px 15px 5px 15px;
+    margin: 0 10px 0 10px;
+    color: #cbcbcb;
+}
+
+.details-content img {
+    background-color: white;
+    width: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.details-content b {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details-content b p {
+    font-weight: 400;
+}
+
+.details .btn {
+    width: stretch;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 5px 15px 5px 15px;
+    background-color: #261412;
+    color: white;
+}
