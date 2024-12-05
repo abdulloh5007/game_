@@ -3,8 +3,10 @@ const data = [
         id: 1,
         name: 'Anton',
         balance: 30,
-        avaUrl: '',
+        avaUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjjPSdqg5_VuBrSk-YaQhKBMUT9Wsku0yxWA&s',
         bank: 1000,
+        bgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA0_RDc3Z9B_Xaim-UpXMpSCVmvFBMltyA2w&s',
+        uStatus: 'vip',
     },
     {
         id: 2,
@@ -12,6 +14,8 @@ const data = [
         balance: 50,
         avaUrl: '',
         bank: 2000,
+        bgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE2VTNuOtaPvUwRw7pbAO3pUlR1rG8vA4P1g&s',
+        uStatus: 'player',
     },
     {
         id: 3,
@@ -19,13 +23,17 @@ const data = [
         balance: 10,
         avaUrl: '',
         bank: 5000,
+        bgUrl: '',
+        uStatus: 'vip',
     },
     {
         id: 4,
         name: 'Nick',
         balance: 40,
-        avaUrl: '',
+        avaUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQddToAAjv2Ip1pkLQmSZ6qPPMmVPcr4pwTQA&s',
         bank: 600,
+        bgUrl: '',
+        uStatus: 'player',
     },
     {
         id: 5,
@@ -33,8 +41,10 @@ const data = [
         balance: 90,
         avaUrl: '',
         bank: 9000,
+        bgUrl: '',
+        uStatus: 'player',
     },
-]
+];
 
 const wrapper = document.querySelector('.wrapper');
 const details = document.querySelector('.details');
@@ -53,7 +63,9 @@ data.map((e, i) => {
     card.addEventListener('click', () => {
         details.innerHTML = `
             <div class="details-content">
-                <img src=${e.avaUrl ? e.avaUrl : '../images/ava.png'} alt="ava${e.id}">
+                <div class="img">
+                    <img src=${e.avaUrl ? e.avaUrl : '../images/ava.png'} alt="ava${e.id}">
+                </div>
                 <b>Name: <p>${e.name}</p></b>
                 <b>Balance: <p>$${e.balance}</p></b>
                 <b>Bank: <p>$${e.bank}</p></b>
@@ -62,12 +74,12 @@ data.map((e, i) => {
         `;
         const btn = document.querySelector('.btn');
         btn.addEventListener('click', () => {
-            wrapper.style.display = 'grid';
-            details.style.display = 'none';
+            details.classList.remove('show');
         });
-
-        wrapper.style.display = 'none';
-        details.style.display = 'block';
+        setTimeout(() => {
+            details.classList.add('show');
+            e.bgUrl ? details.style.backgroundImage = `url(${e.bgUrl})` : details.style.background = '#2a2a2a';
+        }, 50);
     });
-})
+});
 
