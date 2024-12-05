@@ -72,12 +72,15 @@ data.map((e, i) => {
                 <button class="btn">Back</button>
             </div>
         `;
+
         const btn = document.querySelector('.btn');
         btn.addEventListener('click', () => {
             details.classList.remove('show');
+            wrapper.style.display = 'grid';
         });
         setTimeout(() => {
             details.classList.add('show');
+            wrapper.style.display = 'none';
             e.bgUrl ? details.style.backgroundImage = `url(${e.bgUrl})` : details.style.background = '#2a2a2a';
         }, 50);
     });
