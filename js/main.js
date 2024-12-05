@@ -21,7 +21,7 @@ const data = [
         id: 3,
         name: 'Аня',
         balance: 10,
-        avaUrl: '',
+        avaUrl: 'https://cs50.com.ua/image/catalog/telegram-bot.png',
         bank: 5000,
         bgUrl: '',
         uStatus: 'vip',
